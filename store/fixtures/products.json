@@ -1,0 +1,58 @@
+[
+    {
+        "model": "store.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "name": "Wireless Headphones",
+            "slug": "wireless-headphones",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": "99.99",
+            "available": true,
+            "created": "2024-01-01T00:00:00Z",
+            "updated": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "name": "Smart Watch",
+            "slug": "smart-watch",
+            "description": "Feature-rich smartwatch with health tracking capabilities.",
+            "price": "199.99",
+            "available": true,
+            "created": "2024-01-01T00:00:00Z",
+            "updated": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 3,
+        "fields": {
+            "category": 2,
+            "name": "Python Programming Guide",
+            "slug": "python-programming-guide",
+            "description": "Comprehensive guide to Python programming for beginners.",
+            "price": "29.99",
+            "available": true,
+            "created": "2024-01-01T00:00:00Z",
+            "updated": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "store.product",
+        "pk": 4,
+        "fields": {
+            "category": 3,
+            "name": "Cotton T-Shirt",
+            "slug": "cotton-t-shirt",
+            "description": "Comfortable 100% cotton t-shirt.",
+            "price": "19.99",
+            "available": true,
+            "created": "2024-01-01T00:00:00Z",
+            "updated": "2024-01-01T00:00:00Z"
+        }
+    }
+] 

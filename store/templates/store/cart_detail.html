@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Shopping Cart - {{ block.super }}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Shopping Cart</h1>
+
+{% if cart.items.exists %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.items.all %}
+            <tr>
+                <td>
+                    <a href="{{ item.product.get_absolute_url }}">{{ item.product.name }}</a>
+                </td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.product.price }}</td>
+                <td>${{ item.get_cost }}</td>
+                <td>
+                    <form hx-post="{% url 'store:remove-from-cart' item.id %}"
+                          hx-trigger="submit"
+                          hx-swap="none"
+                          class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr class="table-primary">
+                <td colspan="3"><strong>Total</strong></td>
+                <td colspan="2"><strong>${{ cart.get_total_cost }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="text-end mt-4">
+    <a href="{% url 'store:product-list' %}" class="btn btn-secondary">
+        Continue Shopping
+    </a>
+    <a href="{% url 'store:checkout' %}" class="btn btn-primary">
+        Proceed to Checkout
+    </a>
+</div>
+{% else %}
+<div class="text-center">
+    <p>Your cart is empty.</p>
+    <a href="{% url 'store:product-list' %}" class="btn btn-primary">
+        Continue Shopping
+    </a>
+</div>
+{% endif %}
+{% endblock %} 

@@ -1,0 +1,81 @@
+/* Form styling */
+.form-control {
+    border-radius: 0.25rem;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Card styling */
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Product card styling */
+.product-card {
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Cart badge styling */
+.cart-badge {
+    position: relative;
+    top: -8px;
+    right: -8px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Button styling */
+.btn {
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+/* Search form styling */
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+}
+
+.search-button {
+    border-radius: 0 20px 20px 0;
+    border-left: none;
+}
+
+/* Search results highlight */
+.search-highlight {
+    background-color: rgba(255, 243, 205, 0.5);
+    padding: 0.1em 0.2em;
+    border-radius: 0.2em;
+} 
