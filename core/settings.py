@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://cognifyshop-demo.aliahad.com', 'https://387jwd9hjwdcc.ahost.marscode.site', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -171,3 +171,27 @@ LOGOUT_REDIRECT_URL = 'store:product-list'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
+
+
+
+if not DEBUG:
+
+    # CSRF Settings
+    CSRF_TRUSTED_ORIGINS = ['https://387jwd9hjwdcc.ahost.marscode.site', 'https://cognifyshop-demo.aliahad.com']
+
+    # Security Settings - Simplified for initial deployment
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    USE_X_FORWARDED_HOST = True
+    USE_X_FORWARDED_PORT = True
+
+    # Session and CSRF Settings
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+
+    SECURE_SSL_REDIRECT = True
+
+
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
